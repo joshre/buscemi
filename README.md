@@ -1,7 +1,8 @@
-# buscemi
+# Buscemi
 ![Buscemi](screenshot.png)
-Theme file used in buscemi
-## uses:
+This is the base themefile that I use for wordpress, it's built to work pretty quick in my environment, so it's a little opinionated.
+
+## Makes Use of:
 - Pleeease
 - CodeKit
 - Sass
