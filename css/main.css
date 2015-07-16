@@ -1,0 +1,205 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font-family: "Myriad Pro", sans-serif;
+  line-height: 1.6;
+  font-size: 1.2rem;
+  color: #353535; }
+  @media screen and (max-width: 991px) {
+    body {
+      font-size: 1.08rem; } }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Georgia", serif;
+  font-weight: 900; }
+  h1.section-title, h2.section-title, h3.section-title, h4.section-title, h5.section-title, h6.section-title {
+    line-height: 2.5; }
+
+h1, h2 {
+  line-height: 1.2; }
+
+h3, h4 {
+  line-height: 1.4; }
+
+h1 {
+  font-size: 2.4rem; }
+
+h2 {
+  font-size: 1.8rem; }
+
+h3 {
+  font-size: 1.56rem; }
+
+h4 {
+  font-size: 1.2rem; }
+
+h5 {
+  font-size: 1.2rem; }
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 2.64rem; }
+
+  h2 {
+    font-size: 2.04rem; }
+
+  h3 {
+    font-size: 1.8rem; }
+
+  h4 {
+    font-size: 1.56rem; }
+
+  h5 {
+    font-size: 1.2rem; } }
+@media screen and (min-width: 992px) {
+  h1 {
+    font-size: 3rem; }
+
+  h2 {
+    font-size: 2.4rem; }
+
+  h3 {
+    font-size: 1.8rem; }
+
+  h4 {
+    font-size: 1.56rem; }
+
+  h5 {
+    font-size: 1.2rem; } }
+@media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 4.8rem; }
+
+  h2 {
+    font-size: 3rem; }
+
+  h3 {
+    font-size: 2.4rem; }
+
+  h4 {
+    font-size: 2.16rem; }
+
+  h5 {
+    font-size: 1.56rem; } }
+em {
+  font-style: italic; }
+
+strong {
+  font-weight: 900; }
+
+ul {
+  list-style-type: square; }
+  ul li {
+    margin-left: 1.5em; }
+
+ol {
+  list-style: decimal; }
+
+.center {
+  text-align: center; }
+
+.featured time {
+  float: right; }
+.featured .deet-wrap {
+  margin-top: 0.5em; }
+.featured .title {
+  font-weight: 600;
+  width: 75%;
+  display: block;
+  float: left; }
+.featured .type {
+  font-weight: 400;
+  clear: both; }
+.featured.two {
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 91.4701957002%;
+  margin-left: 4.2649021499%;
+  margin-bottom: 1em; }
+  .featured.two:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 992px) {
+    .featured.two {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 48.821174201%;
+      margin-left: 0%;
+      margin-bottom: 0; }
+      .featured.two:last-child {
+        margin-right: 0; } }
+.featured.three {
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 91.4701957002%;
+  margin-left: 4.2649021499%; }
+  .featured.three:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 992px) {
+    .featured.three {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 31.7615656014%;
+      margin-left: 0%; }
+      .featured.three:last-child {
+        margin-right: 0; } }
+.featured img {
+  width: 100%; }
+
+.home-bg {
+  float: left;
+  width: 100%; }
