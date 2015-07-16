@@ -1,0 +1,38 @@
+// ------------------------------------------------------------
+// Neat grid using Omega Reset
+// ------------------------------------------------------------
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}
+@mixin border-block($color, $border) {
+  border-bottom: $border solid $color;
+  h1, h2, h3, h4, h5, h6 {
+    color: $color;
+    text-transform: capitalize;
+  }
+}
+@mixin header-accent($color) {
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: $color;
+  }
+}
+@mixin st-button($color) {
+  @include pad(0.5em 1em);
+  text-decoration: none;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  display: table;
+  margin: 0 auto;
+  background-color: map-get($color, main);
+
+  &:hover {
+    background-color: map-get($color, mainOne);
+  }
+
+  &:active {
+    background-color: map-get($color, mainTwo);
+  }
+}

@@ -1,2 +1,7 @@
 # buscemi
-My Base Wordpress Theme
+Theme file used in buscemi
+## uses:
+- Pleeease
+- CodeKit
+- Sass
+- Timber
