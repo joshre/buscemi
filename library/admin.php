@@ -98,7 +98,7 @@ add_action('admin_head', 'custom_css');
 
 // Custom Backend Footer
 function bones_custom_admin_footer() {
-    _e('<span id="footer-thankyou">Developed by <a href="http://bamboocreative.com" target="_blank">Bamboo Creative</a></span>.', 'bonestheme');
+    _e('<span id="footer-thankyou">Developed by <a href="http://honeyagency.com" target="_blank">The Honey Agency</a></span>.', 'bonestheme');
 }
 
 // adding it to the admin area

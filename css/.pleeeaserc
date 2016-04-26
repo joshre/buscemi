@@ -1,7 +1,0 @@
-{
-  "in": "main.css",
-  "out": "main.min.css",
-  "browsers": "last 2 versions",
-  "mqpacker": true,
-  "minifier": true
-}
