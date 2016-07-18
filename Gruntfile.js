@@ -15,14 +15,14 @@ module.exports = function(grunt) {
         uglify: {
             dist: {
                 files: {
-                    "app/app.min.js": "<%= conf.js %>"
+                    "app/app.min.js": ['static/**/*.js', '!static/icons/**'],
                 }
-            }
+            },
         },
         sass: {
             dist: {
                 options: {
-                    style: 'compresed',
+                    style: 'compressed',
                     sourcemap: 'none'
                 },
                 files: {
@@ -35,7 +35,12 @@ module.exports = function(grunt) {
                 sourcemap: false,
                 'postcss-zindex': false,
                 'postcss-merge-idents': true,
-                'postcss-discard-duplicates': true
+                'postcss-discard-duplicates': true,
+                'postcss-convert-values': true,
+                // autoprefixer: {
+                //     browsers: ['> 1%', 'last 2 versions', 'Firefox >= 20'],
+                //     add: true
+                // }
             },
             dist: {
                 files: {
@@ -43,14 +48,35 @@ module.exports = function(grunt) {
                 }
             }
         },
+        // postcss: {
+        //     options: {
+        //         processors: [
+        //             require('postcss-font-magician')({
+        //                 hosted: '../fonts/'
+        //             })
+        //         ]
+        //     },
+        //     dist: {
+        //         src: '<%= conf.app %>/main.min.css'
+        //     }
+        // },
         watch: {
+            twig: {
+                files: '**/*.twig',
+                options: {
+                    livereload: true,
+                },
+            },
             scripts: {
                 files: ["<%= conf.js %>"],
                 tasks: ["uglify"]
             },
             sass: {
                 files: ["<%= conf.sass %>"],
-                tasks: ["sass"]
+                tasks: ["sass"],
+                options: {
+                    livereload: true,
+                },
             },
             cssnano: {
                 files: ["<%= conf.sass %>"],
@@ -120,25 +146,16 @@ module.exports = function(grunt) {
                 flatten: true,
                 filter: 'isFile',
             },
-            gruntIconJS: {
-                expand: true,
-                cwd: '<%= conf.icons %>/final/',
-                src: ['grunticon.loader.js'],
-                dest: 'static/',
-                flatten: true,
-                filter: 'isFile',
-            },
         },
         notify_hooks: {
             options: {
                 enabled: true,
-                max_sass_notifications: 0,
-                max_pleeease_notifications: 1,
                 success: true
             }
         },
     });
     grunt.loadNpmTasks('grunt-cssnano');
+    grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
