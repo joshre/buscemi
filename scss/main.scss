@@ -12,6 +12,8 @@
   '_01-base/typography',
   '_01-base/base';
 
+@import '_03-layout/to-delete';
+
 @import
   '_03-layout/navigation',
   '_03-layout/header',
@@ -19,9 +21,10 @@
   '_03-layout/forms';
 
 @import
-  
   '_02-components/buttons',
-  '_02-components/icons';
+  '_02-components/icons',
+  '_02-components/spacing';
 
 @import
+
   '_04-pages/home';

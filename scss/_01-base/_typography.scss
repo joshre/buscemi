@@ -1,12 +1,9 @@
-
 body {
     font-family: $base-sans-font;
     line-height: $base-line-height;
     font-size: 1.2rem;
     color: $base-font-color;
     font-weight: 400;
-
-   
 }
 
 %headings {
@@ -37,7 +34,6 @@ $h6: 0.7 * $base-font-size;
 
 h1 {
     font-size: $h1;
-    font-weight: 100;
     letter-spacing: 2px;
     line-height: 1.1;
     margin-bottom: 0.2em;
@@ -45,13 +41,11 @@ h1 {
 
 h2 {
     font-size: $h2;
-    font-weight: 500;
     letter-spacing: 1.7px;
 }
 
 h3 {
     font-size: 0.85em;
-    font-weight: 900;
     letter-spacing: 1.6px;
 }
 
@@ -152,8 +146,8 @@ em {
     font-style: italic;
 }
 
-strong {
-    font-weight: 900;
+strong, b {
+    font-weight: 600;
 }
 
 ul {
@@ -177,15 +171,9 @@ ol {
     text-align: center;
 }
 
-
 a {
     text-decoration: none;
     color: $link-color;
-
-    &:hover {
-        transition: color .2s  ease-in-out;
-    }
-
 }
 
 code, pre {
