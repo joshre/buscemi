@@ -1,43 +1,53 @@
-$base-serif-font: 'Georgia', serif;
-$base-sans-font: 'Myriad Pro', sans-serif;
+$link-color: #4aa4ff;
 
-$heading-font-family: $base-serif-font;
-$heading-font-weight: 900;
+$default-font: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif !default;
+
+$base-serif-font:$default-font;
+$base-sans-font:$default-font;
+$heading-font-family:$default-font;
+
+$heading-font-weight: 600;
 
 $max-width: (
 	xs: 480px,
 	sm: 768px,
 	md: 992px,
-	lg: 1200px
+	lg: 1200px,
+	xl: 1640px
 );
 
-$base-font-color: #353535;
-$base-font-size: 1.2rem;
+$base-font-color: #024958;
+$base-font-size: 1.1em;
 $base-padding: 1em;
+$base-line-height: 1.6;
 
 $base-border-radius: 8px;
+$gr:1.610833;
 
 //
 // Media Queries & Breakpoints
 // 
 
 // Extra small screen / phone
-$screen-xs:                  480px !default;
+$screen-xs:                  map-get($max-width, xs) !default;
 
 // Small screen / tablet
-$screen-sm:                  768px !default;
+$screen-sm:                  map-get($max-width, sm) !default;
 
 // Medium screen / desktop
-$screen-md:                  992px !default;
+$screen-md:                  map-get($max-width, md) !default;
 
 // Large screen / wide desktop
-$screen-lg:                  1200px !default;
+$screen-lg:                  map-get($max-width, lg) !default;
+
+// Monster Screen
+$screen-xl:                  map-get($max-width, xl) !default;
 
 // So media queries don't overlap when required, provide a maximum
-$screen-xs-max:              ($screen-sm - 1) !default;
-$screen-sm-max:              ($screen-md - 1) !default;
-$screen-md-max:              ($screen-lg - 1) !default;
+$screen-xs-max:              ($screen-xs - 1) !default;
+$screen-sm-max:              ($screen-sm - 1) !default;
+$screen-md-max:              ($screen-md - 1) !default;
 
-$large-screen:  new-breakpoint(max-width 1200px 12);
-$medium-screen: new-breakpoint(max-width  992px 12);
-$small-screen:  new-breakpoint(max-width  768px  6);
+$max-xs:  new-breakpoint(max-width $screen-xs-max 12);
+$max-sm: new-breakpoint(max-width $screen-sm-max 12);
+$max-md:  new-breakpoint(max-width $screen-md-max  6);
