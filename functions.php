@@ -52,10 +52,6 @@ new StarterSite();
 
 require_once ('library/admin.php');
  // admin settings & customization
-require_once ('library/routes.php');
- // any hard-coded routes
+
 require_once ('library/buscemi.php');
  // lots of extra theme stuff
-
-
-
