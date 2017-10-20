@@ -1,4 +1,6 @@
-$grid: 1;
+
+$gutter: $grid;
+// this variable is in variables
 
 .grid--one {
     flex-basis: 100%;
@@ -6,8 +8,8 @@ $grid: 1;
 }
 
 .grid--four-fifths {
-    flex-basis: calc(100% / 1.25 - (.2em * #{$grid}));
-    width: calc(100% / 1.25 - (.2em * #{$grid}));
+    flex-basis: calc(100% / 1.25 - (.2em * #{$gutter}));
+    width: calc(100% / 1.25 - (.2em * #{$gutter}));
 
     &.nog {
         flex-basis: calc(100% /  1.25);
@@ -16,8 +18,8 @@ $grid: 1;
 }
 
 .grid--three-fourths {
-    flex-basis: calc(75% - (.25em * #{$grid}));
-    width: calc(75% - (.25em * #{$grid}));
+    flex-basis: calc(75% - (.25em * #{$gutter}));
+    width: calc(75% - (.25em * #{$gutter}));
 
     &.nog {
         flex-basis: 75%;
@@ -26,8 +28,8 @@ $grid: 1;
 }
 
 .grid--two-thirds {
-    flex-basis: calc(100% / 1.5 - (.3333333em * #{$grid}));
-    width: calc(100% / 1.5 - (.3333333em * #{$grid}));
+    flex-basis: calc(100% / 1.5 - (.3333333em * #{$gutter}));
+    width: calc(100% / 1.5 - (.3333333em * #{$gutter}));
 
     &.nog {
         flex-basis: calc(100% / 1.5);
@@ -36,8 +38,8 @@ $grid: 1;
 }
 
 .grid--half {
-    flex-basis: calc(100% / 2 - (.5em * #{$grid}));
-    width: calc(100% / 2 - (.5em * #{$grid}));
+    flex-basis: calc(100% / 2 - (.5em * #{$gutter}));
+    width: calc(100% / 2 - (.5em * #{$gutter}));
 
     &.nog {
         flex-basis: calc(100% / 2);
@@ -46,8 +48,8 @@ $grid: 1;
 }
 
 .grid--two-fifths {
-    flex-basis: calc(100% / 2.5 - (.6em * #{$grid}));
-    width: calc(100% / 2.5 - (.6em * #{$grid}));
+    flex-basis: calc(100% / 2.5 - (.6em * #{$gutter}));
+    width: calc(100% / 2.5 - (.6em * #{$gutter}));
 
     &.nog {
         flex-basis: calc(100% /  2.5);
@@ -56,8 +58,8 @@ $grid: 1;
 }
 
 .grid--three-fifths {
-    flex-basis: calc(100% / 1.666666 - (.4em * #{$grid}));
-    width: calc(100% / 1.666666 - (.4em * #{$grid}));
+    flex-basis: calc(100% / 1.666666 - (.4em * #{$gutter}));
+    width: calc(100% / 1.666666 - (.4em * #{$gutter}));
 
     &.nog {
         flex-basis: calc(100% /  1.666666);
@@ -66,8 +68,8 @@ $grid: 1;
 }
 
 .grid--third {
-    flex-basis: calc(100% / 3 - (.6666666em * #{$grid}));
-    width: calc(100% / 3 - (.6666666em * #{$grid}));
+    flex-basis: calc(100% / 3 - (.6666666em * #{$gutter}));
+    width: calc(100% / 3 - (.6666666em * #{$gutter}));
 
     &.nog {
         flex-basis: calc(100% / 3);
@@ -76,8 +78,8 @@ $grid: 1;
 }
 
 .grid--fourth {
-    flex-basis: calc(100% / 4 - (.75em * #{$grid}));
-    width: calc(100% / 4 - (.75em * #{$grid}));
+    flex-basis: calc(100% / 4 - (.75em * #{$gutter}));
+    width: calc(100% / 4 - (.75em * #{$gutter}));
 
     &.nog {
         flex-basis: calc(100% / 4);
@@ -86,8 +88,8 @@ $grid: 1;
 }
 
 .grid--fifth {
-    flex-basis: calc(100% / 5 - (.8em * #{$grid}));
-    width: calc(100% / 5 - (.8em * #{$grid}));
+    flex-basis: calc(100% / 5 - (.8em * #{$gutter}));
+    width: calc(100% / 5 - (.8em * #{$gutter}));
 
     &.nog {
         flex-basis: calc(100% / 5);
@@ -96,8 +98,8 @@ $grid: 1;
 }
 
 .grid--sixth {
-    flex-basis: calc(100% / 6 - (.85em * #{$grid}));
-    width: calc(100% / 6 - (.85em * #{$grid}));
+    flex-basis: calc(100% / 6 - (.85em * #{$gutter}));
+    width: calc(100% / 6 - (.85em * #{$gutter}));
 
     &.nog {
         flex-basis: calc(100% / 6);
@@ -106,8 +108,8 @@ $grid: 1;
 }
 
 .grid--ninth {
-    flex-basis: calc(100% / 9 - (.55em * #{$grid}));
-    width: calc(100% / 9 - (.55em * #{$grid}));
+    flex-basis: calc(100% / 9 - (.55em * #{$gutter}));
+    width: calc(100% / 9 - (.55em * #{$gutter}));
 
     &.nog {
         flex-basis: calc(100% / 9);
@@ -116,8 +118,8 @@ $grid: 1;
 }
 
 .grid--tenth {
-    flex-basis: calc(100% / 10 - (.55em * #{$grid}));
-    width: calc(100% / 10 - (.55em * #{$grid}));
+    flex-basis: calc(100% / 10 - (.55em * #{$gutter}));
+    width: calc(100% / 10 - (.55em * #{$gutter}));
 
     &.nog {
         flex-basis: calc(100% / 10);
@@ -132,8 +134,8 @@ $grid: 1;
     }
 
     .grid--xs-four-fifths {
-        flex-basis: calc(100% / 1.25 - (.2em * #{$grid}));
-        width: calc(100% / 1.25 - (.2em * #{$grid}));
+        flex-basis: calc(100% / 1.25 - (.2em * #{$gutter}));
+        width: calc(100% / 1.25 - (.2em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% /  1.25);
@@ -142,8 +144,8 @@ $grid: 1;
     }
 
     .grid--xs-three-fourths {
-        flex-basis: calc(75% - (.25em * #{$grid}));
-        width: calc(75% - (.25em * #{$grid}));
+        flex-basis: calc(75% - (.25em * #{$gutter}));
+        width: calc(75% - (.25em * #{$gutter}));
 
         &.nog {
             flex-basis: 75%;
@@ -152,8 +154,8 @@ $grid: 1;
     }
 
     .grid--xs-two-thirds {
-        flex-basis: calc(100% / 1.5 - (.3333333em * #{$grid}));
-        width: calc(100% / 1.5 - (.3333333em * #{$grid}));
+        flex-basis: calc(100% / 1.5 - (.3333333em * #{$gutter}));
+        width: calc(100% / 1.5 - (.3333333em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 1.5);
@@ -162,8 +164,8 @@ $grid: 1;
     }
 
     .grid--xs-half {
-        flex-basis: calc(100% / 2 - (.5em * #{$grid}));
-        width: calc(100% / 2 - (.5em * #{$grid}));
+        flex-basis: calc(100% / 2 - (.5em * #{$gutter}));
+        width: calc(100% / 2 - (.5em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 2);
@@ -172,8 +174,8 @@ $grid: 1;
     }
 
     .grid--xs-two-fifths {
-        flex-basis: calc(100% / 2.5 - (.6em * #{$grid}));
-        width: calc(100% / 2.5 - (.6em * #{$grid}));
+        flex-basis: calc(100% / 2.5 - (.6em * #{$gutter}));
+        width: calc(100% / 2.5 - (.6em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% /  2.5);
@@ -182,8 +184,8 @@ $grid: 1;
     }
 
     .grid--xs-third {
-        flex-basis: calc(100% / 3 - (.6666666em * #{$grid}));
-        width: calc(100% / 3 - (.6666666em * #{$grid}));
+        flex-basis: calc(100% / 3 - (.6666666em * #{$gutter}));
+        width: calc(100% / 3 - (.6666666em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 3);
@@ -192,8 +194,8 @@ $grid: 1;
     }
 
     .grid--xs-fourth {
-        flex-basis: calc(100% / 4 - (.75em * #{$grid}));
-        width: calc(100% / 4 - (.75em * #{$grid}));
+        flex-basis: calc(100% / 4 - (.75em * #{$gutter}));
+        width: calc(100% / 4 - (.75em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 4);
@@ -202,8 +204,8 @@ $grid: 1;
     }
 
     .grid--xs-fifth {
-        flex-basis: calc(100% / 5 - (.8em * #{$grid}));
-        width: calc(100% / 5 - (.8em * #{$grid}));
+        flex-basis: calc(100% / 5 - (.8em * #{$gutter}));
+        width: calc(100% / 5 - (.8em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 5);
@@ -212,8 +214,8 @@ $grid: 1;
     }
 
     .grid--xs-sixth {
-        flex-basis: calc(100% / 6 - (.85em * #{$grid}));
-        width: calc(100% / 6 - (.85em * #{$grid}));
+        flex-basis: calc(100% / 6 - (.85em * #{$gutter}));
+        width: calc(100% / 6 - (.85em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 6);
@@ -222,8 +224,8 @@ $grid: 1;
     }
 
     .grid--xs-ninth {
-        flex-basis: calc(100% / 9 - (.55em * #{$grid}));
-        width: calc(100% / 9 - (.55em * #{$grid}));
+        flex-basis: calc(100% / 9 - (.55em * #{$gutter}));
+        width: calc(100% / 9 - (.55em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 9);
@@ -232,8 +234,8 @@ $grid: 1;
     }
 
     .grid--xs-tenth {
-        flex-basis: calc(100% / 10 - (.55em * #{$grid}));
-        width: calc(100% / 10 - (.55em * #{$grid}));
+        flex-basis: calc(100% / 10 - (.55em * #{$gutter}));
+        width: calc(100% / 10 - (.55em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 10);
@@ -250,8 +252,8 @@ $grid: 1;
     }
 
     .grid--sm-four-fifths {
-        flex-basis: calc(100% / 1.25 - (.2em * #{$grid}));
-        width: calc(100% / 1.25 - (.2em * #{$grid}));
+        flex-basis: calc(100% / 1.25 - (.2em * #{$gutter}));
+        width: calc(100% / 1.25 - (.2em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% /  1.25);
@@ -260,8 +262,8 @@ $grid: 1;
     }
 
     .grid--sm-three-fourths {
-        flex-basis: calc(75% - (.25em * #{$grid}));
-        width: calc(75% - (.25em * #{$grid}));
+        flex-basis: calc(75% - (.25em * #{$gutter}));
+        width: calc(75% - (.25em * #{$gutter}));
 
         &.nog {
             flex-basis: 75%;
@@ -270,8 +272,8 @@ $grid: 1;
     }
 
     .grid--sm-two-thirds {
-        flex-basis: calc(100% / 1.5 - (.3333333em * #{$grid}));
-        width: calc(100% / 1.5 - (.3333333em * #{$grid}));
+        flex-basis: calc(100% / 1.5 - (.3333333em * #{$gutter}));
+        width: calc(100% / 1.5 - (.3333333em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 1.5);
@@ -280,8 +282,8 @@ $grid: 1;
     }
 
     .grid--sm-half {
-        flex-basis: calc(100% / 2 - (.5em * #{$grid}));
-        width: calc(100% / 2 - (.5em * #{$grid}));
+        flex-basis: calc(100% / 2 - (.5em * #{$gutter}));
+        width: calc(100% / 2 - (.5em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 2);
@@ -290,8 +292,8 @@ $grid: 1;
     }
 
     .grid--sm-three-fifths {
-        flex-basis: calc(100% / 1.666666 - (.4em * #{$grid}));
-        width: calc(100% / 1.666666 - (.4em * #{$grid}));
+        flex-basis: calc(100% / 1.666666 - (.4em * #{$gutter}));
+        width: calc(100% / 1.666666 - (.4em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% /  1.666666);
@@ -300,8 +302,8 @@ $grid: 1;
     }
 
     .grid--sm-two-fifths {
-        flex-basis: calc(100% / 2.5 - (.6em * #{$grid}));
-        width: calc(100% / 2.5 - (.6em * #{$grid}));
+        flex-basis: calc(100% / 2.5 - (.6em * #{$gutter}));
+        width: calc(100% / 2.5 - (.6em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% /  2.5);
@@ -310,8 +312,8 @@ $grid: 1;
     }
 
     .grid--sm-third {
-        flex-basis: calc(100% / 3 - (.6666666em * #{$grid}));
-        width: calc(100% / 3 - (.6666666em * #{$grid}));
+        flex-basis: calc(100% / 3 - (.6666666em * #{$gutter}));
+        width: calc(100% / 3 - (.6666666em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 3);
@@ -320,8 +322,8 @@ $grid: 1;
     }
 
     .grid--sm-fourth {
-        flex-basis: calc(100% / 4 - (.75em * #{$grid}));
-        width: calc(100% / 4 - (.75em * #{$grid}));
+        flex-basis: calc(100% / 4 - (.75em * #{$gutter}));
+        width: calc(100% / 4 - (.75em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 4);
@@ -330,8 +332,8 @@ $grid: 1;
     }
 
     .grid--sm-fifth {
-        flex-basis: calc(100% / 5 - (.8em * #{$grid}));
-        width: calc(100% / 5 - (.8em * #{$grid}));
+        flex-basis: calc(100% / 5 - (.8em * #{$gutter}));
+        width: calc(100% / 5 - (.8em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 5);
@@ -340,8 +342,8 @@ $grid: 1;
     }
 
     .grid--sm-sixth {
-        flex-basis: calc(100% / 6 - (.85em * #{$grid}));
-        width: calc(100% / 6 - (.85em * #{$grid}));
+        flex-basis: calc(100% / 6 - (.85em * #{$gutter}));
+        width: calc(100% / 6 - (.85em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 6);
@@ -350,8 +352,8 @@ $grid: 1;
     }
 
     .grid--sm-seventh {
-        flex-basis: calc(100% / 7 - (.8em * #{$grid}));
-        width: calc(100% / 7- (.8em * #{$grid}));
+        flex-basis: calc(100% / 7 - (.8em * #{$gutter}));
+        width: calc(100% / 7- (.8em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 7);
@@ -360,8 +362,8 @@ $grid: 1;
     }
 
     .grid--sm-ninth {
-        flex-basis: calc(100% / 9 - (.55em * #{$grid}));
-        width: calc(100% / 9 - (.55em * #{$grid}));
+        flex-basis: calc(100% / 9 - (.55em * #{$gutter}));
+        width: calc(100% / 9 - (.55em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 9);
@@ -370,8 +372,8 @@ $grid: 1;
     }
 
     .grid--sm-tenth {
-        flex-basis: calc(100% / 10 - (.55em * #{$grid}));
-        width: calc(100% / 10 - (.55em * #{$grid}));
+        flex-basis: calc(100% / 10 - (.55em * #{$gutter}));
+        width: calc(100% / 10 - (.55em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 10);
@@ -388,8 +390,8 @@ $grid: 1;
     }
 
     .grid--md-four-fifths {
-        flex-basis: calc(100% / 1.25 - (.2em * #{$grid}));
-        width: calc(100% / 1.25 - (.2em * #{$grid}));
+        flex-basis: calc(100% / 1.25 - (.2em * #{$gutter}));
+        width: calc(100% / 1.25 - (.2em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% /  1.25);
@@ -398,8 +400,8 @@ $grid: 1;
     }
 
     .grid--md-three-fourths {
-        flex-basis: calc(75% - (.25em * #{$grid}));
-        width: calc(75% - (.25em * #{$grid}));
+        flex-basis: calc(75% - (.25em * #{$gutter}));
+        width: calc(75% - (.25em * #{$gutter}));
 
         &.nog {
             flex-basis: 75%;
@@ -408,8 +410,8 @@ $grid: 1;
     }
 
     .grid--md-two-thirds {
-        flex-basis: calc(100% / 1.5 - (.3333333em * #{$grid}));
-        width: calc(100% / 1.5 - (.3333333em * #{$grid}));
+        flex-basis: calc(100% / 1.5 - (.3333333em * #{$gutter}));
+        width: calc(100% / 1.5 - (.3333333em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 1.5);
@@ -418,8 +420,8 @@ $grid: 1;
     }
 
     .grid--md-three-fifths {
-        flex-basis: calc(100% / 1.666666 - (.4em * #{$grid}));
-        width: calc(100% / 1.666666 - (.4em * #{$grid}));
+        flex-basis: calc(100% / 1.666666 - (.4em * #{$gutter}));
+        width: calc(100% / 1.666666 - (.4em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% /  1.666666);
@@ -428,8 +430,8 @@ $grid: 1;
     }
 
     .grid--md-half {
-        flex-basis: calc(100% / 2 - (.5em * #{$grid}));
-        width: calc(100% / 2 - (.5em * #{$grid}));
+        flex-basis: calc(100% / 2 - (.5em * #{$gutter}));
+        width: calc(100% / 2 - (.5em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 2);
@@ -438,8 +440,8 @@ $grid: 1;
     }
 
     .grid--md-two-fifths {
-        flex-basis: calc(100% / 2.5 - (.6em * #{$grid}));
-        width: calc(100% / 2.5 - (.6em * #{$grid}));
+        flex-basis: calc(100% / 2.5 - (.6em * #{$gutter}));
+        width: calc(100% / 2.5 - (.6em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% /  2.5);
@@ -448,8 +450,8 @@ $grid: 1;
     }
 
     .grid--md-third {
-        flex-basis: calc(100% / 3 - (.6666666em * #{$grid}));
-        width: calc(100% / 3 - (.6666666em * #{$grid}));
+        flex-basis: calc(100% / 3 - (.6666666em * #{$gutter}));
+        width: calc(100% / 3 - (.6666666em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 3);
@@ -458,8 +460,8 @@ $grid: 1;
     }
 
     .grid--md-fourth {
-        flex-basis: calc(100% / 4 - (.75em * #{$grid}));
-        width: calc(100% / 4 - (.75em * #{$grid}));
+        flex-basis: calc(100% / 4 - (.75em * #{$gutter}));
+        width: calc(100% / 4 - (.75em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 4);
@@ -468,8 +470,8 @@ $grid: 1;
     }
 
     .grid--md-fifth {
-        flex-basis: calc(100% / 5 - (.8em * #{$grid}));
-        width: calc(100% / 5 - (.8em * #{$grid}));
+        flex-basis: calc(100% / 5 - (.8em * #{$gutter}));
+        width: calc(100% / 5 - (.8em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 5);
@@ -478,8 +480,8 @@ $grid: 1;
     }
 
     .grid--md-sixth {
-        flex-basis: calc(100% / 6 - (.85em * #{$grid}));
-        width: calc(100% / 6 - (.85em * #{$grid}));
+        flex-basis: calc(100% / 6 - (.85em * #{$gutter}));
+        width: calc(100% / 6 - (.85em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 6);
@@ -488,8 +490,8 @@ $grid: 1;
     }
 
     .grid--md-ninth {
-        flex-basis: calc(100% / 9 - (.55em * #{$grid}));
-        width: calc(100% / 9 - (.55em * #{$grid}));
+        flex-basis: calc(100% / 9 - (.55em * #{$gutter}));
+        width: calc(100% / 9 - (.55em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 9);
@@ -498,8 +500,8 @@ $grid: 1;
     }
 
     .grid--md-tenth {
-        flex-basis: calc(100% / 10 - (.55em * #{$grid}));
-        width: calc(100% / 10 - (.55em * #{$grid}));
+        flex-basis: calc(100% / 10 - (.55em * #{$gutter}));
+        width: calc(100% / 10 - (.55em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 10);
@@ -516,8 +518,8 @@ $grid: 1;
     }
 
     .grid--lg-four-fifths {
-        flex-basis: calc(100% / 1.25 - (.2em * #{$grid}));
-        width: calc(100% / 1.25 - (.2em * #{$grid}));
+        flex-basis: calc(100% / 1.25 - (.2em * #{$gutter}));
+        width: calc(100% / 1.25 - (.2em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% /  1.25);
@@ -526,8 +528,8 @@ $grid: 1;
     }
 
     .grid--lg-three-fourths {
-        flex-basis: calc(75% - (.25em * #{$grid}));
-        width: calc(75% - (.25em * #{$grid}));
+        flex-basis: calc(75% - (.25em * #{$gutter}));
+        width: calc(75% - (.25em * #{$gutter}));
 
         &.nog {
             flex-basis: 75%;
@@ -536,8 +538,8 @@ $grid: 1;
     }
 
     .grid--lg-two-thirds {
-        flex-basis: calc(100% / 1.5 - (.3333333em * #{$grid}));
-        width: calc(100% / 1.5 - (.3333333em * #{$grid}));
+        flex-basis: calc(100% / 1.5 - (.3333333em * #{$gutter}));
+        width: calc(100% / 1.5 - (.3333333em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 1.5);
@@ -546,8 +548,8 @@ $grid: 1;
     }
 
     .grid--lg-three-fifths {
-        flex-basis: calc(100% / 1.666666 - (.4em * #{$grid}));
-        width: calc(100% / 1.666666 - (.4em * #{$grid}));
+        flex-basis: calc(100% / 1.666666 - (.4em * #{$gutter}));
+        width: calc(100% / 1.666666 - (.4em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% /  1.666666);
@@ -556,8 +558,8 @@ $grid: 1;
     }
 
     .grid--lg-half {
-        flex-basis: calc(100% / 2 - (.5em * #{$grid}));
-        width: calc(100% / 2 - (.5em * #{$grid}));
+        flex-basis: calc(100% / 2 - (.5em * #{$gutter}));
+        width: calc(100% / 2 - (.5em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 2);
@@ -566,8 +568,8 @@ $grid: 1;
     }
 
     .grid--lg-two-fifths {
-        flex-basis: calc(100% / 2.5 - (.6em * #{$grid}));
-        width: calc(100% / 2.5 - (.6em * #{$grid}));
+        flex-basis: calc(100% / 2.5 - (.6em * #{$gutter}));
+        width: calc(100% / 2.5 - (.6em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% /  2.5);
@@ -576,8 +578,8 @@ $grid: 1;
     }
 
     .grid--lg-third {
-        flex-basis: calc(100% / 3 - (.6666666em * #{$grid}));
-        width: calc(100% / 3 - (.6666666em * #{$grid}));
+        flex-basis: calc(100% / 3 - (.6666666em * #{$gutter}));
+        width: calc(100% / 3 - (.6666666em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 3);
@@ -586,8 +588,8 @@ $grid: 1;
     }
 
     .grid--lg-fourth {
-        flex-basis: calc(100% / 4 - (.75em * #{$grid}));
-        width: calc(100% / 4 - (.75em * #{$grid}));
+        flex-basis: calc(100% / 4 - (.75em * #{$gutter}));
+        width: calc(100% / 4 - (.75em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 4);
@@ -596,8 +598,8 @@ $grid: 1;
     }
 
     .grid--lg-fifth {
-        flex-basis: calc(100% / 5 - (.8em * #{$grid}));
-        width: calc(100% / 5 - (.8em * #{$grid}));
+        flex-basis: calc(100% / 5 - (.8em * #{$gutter}));
+        width: calc(100% / 5 - (.8em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 5);
@@ -606,8 +608,8 @@ $grid: 1;
     }
 
     .grid--lg-sixth {
-        flex-basis: calc(100% / 6 - (.85em * #{$grid}));
-        width: calc(100% / 6 - (.85em * #{$grid}));
+        flex-basis: calc(100% / 6 - (.85em * #{$gutter}));
+        width: calc(100% / 6 - (.85em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 6);
@@ -616,8 +618,8 @@ $grid: 1;
     }
 
     .grid--lg-ninth {
-        flex-basis: calc(100% / 9 - (.55em * #{$grid}));
-        width: calc(100% / 9 - (.55em * #{$grid}));
+        flex-basis: calc(100% / 9 - (.55em * #{$gutter}));
+        width: calc(100% / 9 - (.55em * #{$gutter}));
 
         &.nog {
             flex-basis: calc(100% / 9);
