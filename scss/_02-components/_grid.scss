@@ -1,5 +1,5 @@
-
 $gutter: $grid;
+
 // this variable is in variables
 
 .grid--one {
@@ -160,6 +160,16 @@ $gutter: $grid;
         &.nog {
             flex-basis: calc(100% / 1.5);
             width: calc(100% / 1.5);
+        }
+    }
+
+    .grid--xs-three-fifths {
+        flex-basis: calc(100% / 1.666666 - (.4em * #{$gutter}));
+        width: calc(100% / 1.666666 - (.4em * #{$gutter}));
+
+        &.nog {
+            flex-basis: calc(100% /  1.666666);
+            width: calc(100% /  1.666666);
         }
     }
 
