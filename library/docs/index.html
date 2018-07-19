@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<title>Old Soul Wordpress Documentation</title>
+	</head>
+	<body>
+		<h1>Old Soul Wordpress Documentation</h1>
+		<p>Hi there! This document lives here to give you some basic information about your WordPress site and how to update it. Let&#39;s get started!</p>
+		<h6>Table of Contents</h6>
+		<ul>
+			<li><a href="#wordpress-overview">WordPress Overview</a></li>
+			<li><a href="#logging-in">Logging In</a></li>
+			<li><a href="#media-library">Media Library</a>
+			<ul>
+				<li><a href="#adding-a-media-item">Adding a Media Item</a></li>
+			</ul></li>
+			<li><a href="#adding-editing-a-page">Adding/Editing a Page</a>
+			<ul>
+				<li><a href="#adding-a-new-page">Adding A New Page</a></li>
+				<li><a href="#content">Content</a></li>
+				<li><a href="#published-draft-schedulded-private">Published / Draft / Scheduled / Private</a></li>
+				<li><a href="#editing-a-page">Editing a Page</a></li>
+			</ul></li>
+			<li><a href="#adding-featured-images">Adding a Featured Image</a></li>
+			<li><a href="#adding-a-product">Adding a Product</a></li>
+			<li><a href="coffee-details">Coffee Details</a>
+			<ul>
+				<li><a href="#feature">Featured Product Info</a></li>
+				<li><a href="#product-fields">Product Fields</a></li>
+				<li><a href="#adding-variants">Adding Variants</a></li>
+				<li><a href="#featuring-products">Featuring Products (Shop) </a></li>
+			</ul></li>
+			<li><a href="#handling-orders">Handling Orders</a>
+			<ul>
+				<li><a href="#purchasing-labels">Purchasing Labels</a></li>
+				<li><a href="#issuing-refunds">Issuing Refunds</a></li>
+				<li><a href="#reports">Reports</a></li>
+			</ul>
+		</li>
+	</ul>
+	<hr />
+	<h3 id="wordpress-overview">WordPress Overview</h3>
+	<p>If you&#39;re somewhat familiar with WordPress, feel free to skip to the next section, it&#39;s not integral to understanding your new website. WordPress is a Content Management System (CMS) - at a basic level it performs the following functions:</p>
+	<ol>
+		<li>Displaying content to users. (Frontend)</li>
+		<li>Providing a secure, simple location for site-owners to update that content. (Backend)</li>
+	</ol>
+	<p>At Honey Agency, we custom-build the backend so site-owners don&#39;t need to worry about code or formatting, there&#39;s a few fields that you fill out and we take care of formatting via code. We usually re-size images for you as well; so unless you see a note about image sizes when you are uploading them we&#39;re taking care of the size on the front-end.</p>
+	<p>WordPress breaks down content into <code>pages</code> and <code>posts</code>. A <code>page</code> is the most general form of webpage content: you have some text, possibly an image, and you can access that content via a URL. A <code>post</code> is similar to a <code>page</code>, but it&#39;s hierarchy is based on the model of a blog: you generally have the text and image content that you&#39;d have with a <code>page</code>, but posts are displayed in <strong>series</strong> and usually have a <strong>date</strong> and an <strong>author</strong>. </p>
+	<p>These are generalizations, but are the basic grounds of how a lot of the web is built.</p>
+	<p>At Honey Agency, we try to separate content-types into custom versions of a <code>post</code> to make the website hierarchy more simple and streamlined for clients. For example at honeyagency.com, we have a <strong>team</strong> page with individual <strong>team members</strong> so we have a custom <code>post</code> that&#39;s called <code>Team Member</code>. When you want to add a new team member you don&#39;t have to custom-format anything, you just click <strong>Add New Team Member</strong> on the backend; once you fill out all the content required the team member is automatically populated in different places on the site.</p>
+	<p>Depending on your site, you might have a few custom-posts that we&#39;ll go over in the sections below.</p>
+	<hr />
+	<h3 id="logging-in">Logging In</h3>
+	<p>Logging in to your WordPress site is easy: just add <code>/wp-login</code> to the end of your URL, use the Password and Username (or email) provided and you&#39;re on your way. Once you login you will see what&#39;s called the <strong>WordPress dashboard</strong>-from here you can get anywhere you need to update content. If you look at the homepage of your site while logged in, there will be a black-bar along the top of the page with links to various site functions.</p>
+	<hr />
+	<h3 id="media-library">Media Library</h3>
+	<p>One of the perks of having a site with a CMS is that you have a centralized location for any images you&#39;ve added site-wide. So anytime you upload images, PDFs, audio, etc to a post, a page, or a custom post they&#39;ll be added to a folder similar to the <code>Photos</code> or <code>Pictures</code> folder on your computer.</p>
+	<p>To get to your Media Library, click the <code>Media Library</code> navigation item in the left-hand side menu in the WordPress dashboard. You&#39;ll be presented with a gallery of all the images currently on your site.</p>
+	<h5 id="adding-a-media-item">Adding a Media Item</h5>
+	<p>To add a media item, click <code>Add New</code> from the <code>Media Library</code>. From here you can drag-and-drop however many images you like (note the Maximum upload file size, this is per-file) and they&#39;ll automatically be added and have URL&#39;s generated for them. Usually, you&#39;ll simply upload images or PDFs directly to a post or page, in which case they&#39;ll be added to this library.</p>
+	<hr />
+	<h3 id="adding-editing-a-page">Adding/Editing a Page</h3>
+	<p>In the WordPress overview, you heard that the <code>page</code> is the most basic form of content in WordPress, this is how we&#39;ll add &amp; edit those.</p>
+	<h5 id="adding-a-new-page">Adding A New Page</h5>
+	<p>Once you&#39;re logged in you can add a new page from either:</p>
+	<ol>
+		<li>The black bar along the top of the site, hover (tap on mobile) over <code>+ New</code> and click <code>Page</code></li>
+		<li>From the dashboard, there&#39;s a navigation item on the left-hand side of the page called <strong>Pages.</strong> Click this and click <code>Add New</code>.</li>
+	</ol>
+	<p>You&#39;ll be taken to the backend of a page with no title or content, when you add a title the URL will automatically be generated for you. If you want to change that URL click the area of text you want to change and edit the text, WordPress will automatically convert your text to lower-case and will replace spaces with hyphens to be URL-compatible.</p>
+	<h6>Content</h6>
+	<p>After you have your title and URL set, you can use the area below to add content. The large white text-box is called a <strong>WYSIWYG</strong> (<strong>W</strong>hat <strong>Y</strong>ou <strong>S</strong>ee <strong>I</strong>s <strong>W</strong>hat <strong>Y</strong>ou <strong>G</strong>et) and will operate similarly to Microsoft Word, Apple Pages, or Google Docs.</p>
+	<h6>Published / Draft / Scheduled / Private</h6>
+	<p>You&#39;ll see a bar on the right-hand side of the page with options for publishing the page. To publish (make the page go live) the page, click <code>Publish</code>. If you don&#39;t want people to see the content, you can choose <code>Save Draft</code>. If you want to schedule the page, you can change the date where you see <strong>Publish immediately.</strong> If you want to publish the page but <strong>only want people who are logged into the site to see it</strong> (other admins) you can choose <code>Private</code> under the <strong>Visibility</strong> option.</p>
+	<h5 id="editing-a-page">Editing a Page</h5>
+	<p>To edit a page that is already created, you can either click <code>Edit Page</code> in the black top-bar when you&#39;re looking at the page from the front-end, or you can find the page by clicking <code>Pages</code> in the dashboard and clicking the blue title of the page you&#39;re looking for from the list of pages.</p>
+	<hr />
+</body>
+</html>
