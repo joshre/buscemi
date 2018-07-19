@@ -9,11 +9,11 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 body {margin: 0 auto;display: block;font-size: 1.1rem;color:#333;background:#ffffff;font-family:  -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;line-height: 1.6;-webkit-font-smoothing: antialiased;}
 main{
-	max-width: 700px;padding: 0 1em;
+	max-width: 700px;padding: 0 1em;margin: 0 auto;
 }
 
 header > div{
-	max-width: 700px;padding: 0 1em;
+	max-width: 700px;padding: 0 1em;margin: 0 auto;
 }
 h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#333;}
 
