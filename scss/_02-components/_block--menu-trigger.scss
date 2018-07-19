@@ -33,7 +33,7 @@
         content: ' ';
         transform-origin: center;
         transform: translateY(0) rotate(0);
-        color: $link-color;
+        color: $base-font-color;
         transition: transform 0.3s $base-animation, color 0.3s $base-animation;
     }
 
@@ -58,7 +58,7 @@ body {
 
                 will-change: transform,color;
 
-                // color: $link-color;
+                // color: $base-font-color;
                 transition: transform 0.3s $base-animation, color 0.3s $base-animation;
             }
 
