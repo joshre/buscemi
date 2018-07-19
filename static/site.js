@@ -1,10 +1,13 @@
 jQuery(document).ready(function($) {
-    var myLazyLoad = new LazyLoad({
-        // example of options object -> see options section
-        threshold: 500,
-        throttle: 30,
-        show_while_loading: false,
-    });
+    
+    // var myLazyLoad = new LazyLoad({
+    //     // example of options object -> see options section
+    //     threshold: 500,
+    //     throttle: 30,
+    //     show_while_loading: false,
+    // });
+
+
     // if ($('.slides').length > 0) {
     //     $('.section--testimonial-wrap').flickity({
     //         // options
