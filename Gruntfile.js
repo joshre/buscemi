@@ -1,3 +1,5 @@
+const sass = require('node-sass');
+var Fiber = require("fibers");
 module.exports = function(grunt) {
     grunt.initConfig({
         conf: {
@@ -22,8 +24,9 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options: {
-                    style: 'compressed',
-                    sourcemap: 'none'
+                    implementation: sass,
+                    fiber: Fiber,
+                    sourceMap: false
                 },
                 files: {
                     '<%= conf.app %>/main.min.css': 'scss/main.scss',
@@ -158,7 +161,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-svgmin');
