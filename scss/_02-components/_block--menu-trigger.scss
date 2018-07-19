@@ -18,7 +18,7 @@
         transform: translateY(-50%);
         display: block;
         opacity: 1;
-        color: $link-color;
+        color: $base-font-color;
         transition: opacity 0.3s $base-animation, color 0.3s $base-animation;
     }
 
