@@ -61,6 +61,11 @@ For more information on creating Dashboard Widgets, view:
 http://digwp.com/2010/10/customize-wordpress-dashboard/
 */
 
+function yoasttobottom() {
+    return 'low';
+}
+add_filter( 'wpseo_metabox_prio', 'yoasttobottom');
+
 // removing the dashboard widgets
 add_action('admin_menu', 'disable_default_dashboard_widgets');
 
