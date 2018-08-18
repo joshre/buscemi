@@ -89,3 +89,22 @@ function getSinglePost($posttype = null)
 
     return $singlePostArray;
 }
+
+
+function setupPaginationQuery($posttype = 'post')
+{
+
+    global $paged;
+
+    if (!isset($paged) || !$paged) {
+        $paged = 1;
+    }
+
+    $query = array(
+        'post_type' => $posttype,
+        'paged'     => $paged,
+    );
+
+    query_posts($query); //this forces WP to rerun query stuff
+
+}
