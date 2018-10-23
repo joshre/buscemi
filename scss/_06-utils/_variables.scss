@@ -8,15 +8,6 @@ $heading-font-family:$default-font;
 
 $heading-font-weight: 600;
 
-$max-width: (
-	xs: 	480px,
-	xsm: 	640px,
-	sm: 	768px,
-	smd: 	834px,
-	md: 	992px,
-	lg: 	1200px,
-	xl: 	1640px
-);
 
 $max-wrap: 1280px;
 
@@ -36,6 +27,18 @@ $grid:1;
 // Media Queries & Breakpoints
 // 
 
+
+$max-width: (
+	xs: 	480px,
+	xsm: 	640px,
+	sm: 	768px,
+	smd: 	834px,
+	md: 	992px,
+	mdl: 	1110px,
+	lg: 	1200px,
+	xl: 	1640px
+);
+
 // Extra small screen / phone
 $screen-xs:                  map-get($max-width, xs) !default;
 
@@ -50,6 +53,8 @@ $screen-smd:                 map-get($max-width, smd) !default;
 // Medium screen / desktop
 $screen-md:                  map-get($max-width, md) !default;
 
+$screen-mdl:                  map-get($max-width, mdl) !default;
+
 // Large screen / wide desktop
 $screen-lg:                  map-get($max-width, lg) !default;
 
@@ -62,6 +67,7 @@ $screen-xsm-max:             ($screen-xsm - 1) !default;
 $screen-sm-max:              ($screen-sm - 1) !default;
 $screen-smd-max:             ($screen-smd - 1) !default;
 $screen-md-max:              ($screen-md - 1) !default;
+$screen-mdl-max:             ($screen-mdl - 1) !default;
 $screen-lg-max:              ($screen-lg - 1) !default;
 
 $max-xs:  	new-breakpoint(max-width $screen-xs-max 12);
@@ -69,4 +75,5 @@ $max-xsm: 	new-breakpoint(max-width $screen-xsm-max 12);
 $max-sm: 	new-breakpoint(max-width $screen-sm-max 12);
 $max-smd: 	new-breakpoint(max-width $screen-smd-max 12);
 $max-md:  	new-breakpoint(max-width $screen-md-max  6);
+$max-mdl:  	new-breakpoint(max-width $screen-mdl-max  6);
 $max-lg:  	new-breakpoint(max-width $screen-lg-max  6);

@@ -71,6 +71,18 @@ function buscemi_scripts()
 }
 add_action('wp_enqueue_scripts', 'buscemi_scripts');
 
+function slider_scripts()
+{
+
+    wp_register_script('flickity', get_template_directory_uri() . '/app/vendors/flickity/flickity.min.js', null, false, true);
+    wp_enqueue_script('flickity');
+
+    wp_enqueue_style('flickity_style', get_template_directory_uri() . '/app/vendors/flickity/flickity.css', null, null, null);
+}
+
+// this goes in the .php file that needs a slider, not here. It's here because I love you.
+// add_action('wp_enqueue_scripts', 'slider_scripts');
+
 // Allowing SVG preveiw in WP Upload
 function cc_mime_types($mimes)
 {

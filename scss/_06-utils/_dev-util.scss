@@ -1,0 +1,91 @@
+$media-query-display: false;
+$mono-font: monospace;
+.block--media-queries {
+    display: none;
+    z-index: 9999999;
+
+    @if $media-query-display == true {
+        display: block;
+    }
+
+    &.show {
+        display: block;
+    }
+
+    font-size: .9rem;
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    background-color: black;
+    color: white;
+    padding: .5em;
+    font-family: $mono-font;
+
+    &:after {
+        content: 'displaying smallest';
+        font-weight: 900;
+    }
+
+    @include media($screen-xs) {
+        &:after {
+            content: 'displaying screen-xs';
+            font-weight: 900;
+        }
+    }
+
+
+    @include media($screen-xsm) {
+        &:after {
+            content: 'displaying screen-xsm';
+            font-weight: 100;
+        }
+    }
+
+
+    @include media($screen-sm) {
+        &:after {
+            content: 'displaying screen-sm';
+            font-weight: 900;
+        }
+    }
+
+
+    @include media($screen-smd) {
+        &:after {
+            content: 'displaying screen-smd';
+            font-weight: 100;
+        }
+    }
+
+
+    @include media($screen-md) {
+        &:after {
+            content: 'displaying screen-md';
+            font-weight: 900;
+        }
+    }
+
+
+    @include media($screen-mdl) {
+        &:after {
+            content: 'displaying screen-mdl';
+            font-weight: 100;
+        }
+    }
+
+
+    @include media($screen-lg) {
+        &:after {
+            content: 'displaying screen-lg';
+            font-weight: 900;
+        }
+    }
+
+
+    @include media($screen-xl) {
+        &:after {
+            content: 'displaying screen-xl';
+            font-weight: 100;
+        }
+    }
+}
