@@ -32,12 +32,18 @@ if (!is_admin()) {
     add_action("wp_enqueue_scripts", "jquery_enqueue", 11);
 }
 
+// Getting rid of WP Default jquery and adding from google
+if (!is_admin()) {
+    add_action("wp_enqueue_scripts", "jquery_enqueue", 11);
+}
+
 function jquery_enqueue()
 {
     wp_dequeue_script('jquery');
     wp_deregister_script('jquery');
-    wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", false, null);
+    wp_register_script('jquery',  get_template_directory_uri() . '/app/jquery-1.9.1.min.js', false, null);
 }
+
 function localInstall()
 {
 
@@ -54,12 +60,14 @@ function buscemi_scripts()
     wp_enqueue_script('jquery');
     localInstall();
     wp_register_script('lazyload', get_template_directory_uri() . '/app/vendors/lazyload.min.js', null, false, true);
-    // wp_enqueue_script('lazyload');
+    wp_enqueue_script('lazyload');
     wp_register_script('appear', get_template_directory_uri() . '/app/vendors/appear.min.js', null, false, true);
     // wp_enqueue_script('appear');
     wp_register_script('picturefill', get_template_directory_uri() . '/app/vendors/picturefill.min.js', null, false, true);
-    // wp_enqueue_script('picturefill');
+    wp_enqueue_script('picturefill');
+    wp_register_script('parallax', get_template_directory_uri() . '/app/vendors/smooth-parallax.min.js', null, false, true);
 
+    // wp_enqueue_script('parallax');
     wp_enqueue_style('buscemi_style', get_template_directory_uri() . '/app/main.min.css', null, null, null);
     wp_enqueue_script('buscemi_script', get_template_directory_uri() . '/app/app.min.js', array('jquery'), null, null, true);
 }

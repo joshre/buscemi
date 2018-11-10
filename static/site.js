@@ -51,6 +51,54 @@ jQuery(document).ready(function($) {
     //         }
     //     });
     // });
+
+// Parallax Script
+
+    // if ($('.parallax').length > 0) {
+    //     window.addEventListener("load", function() {
+    //         SmoothParallax.init('pageScroll');
+    //     });
+    // }
+
+// appear and disappear   
+    
+    // appear({
+    //     init: function init() {},
+    //     // function to get all elements to track
+    //     elements: function elements() {
+    //         return document.getElementsByClassName('toanimate');
+    //     },
+    //     // function to run when an element is in view
+    //     appear: function appear(el) {
+    //         el.className += " show";
+    //     },
+    //     // function to run when an element is in view
+    //     disappear: function disappear(el) {
+    //         el.classList.remove("show");
+    //     },
+    //     reappear: true,
+    // });
+
+// appear once
+    
+    // appear({
+    //     init: function init() {},
+    //     // function to get all elements to track
+    //     elements: function elements() {
+    //         return document.getElementsByClassName('animateonce');
+    //     },
+    //     // function to run when an element is in view
+    //     appear: function appear(el) {
+    //         el.className += " show";
+    //     },
+    //     // function to run when an element is in view
+    //     // disappear: function disappear(el) {
+    //     //     el.classList.remove("show");
+    //     // },
+    //     reappear: false,
+    // });
+
+    
     if (window.matchMedia('(max-width: 767px)').matches) {
         var mob = true;
     } else {

@@ -16,6 +16,7 @@
 	.spacing--dsk-vert-6{padding-top:6em * $grid; padding-bottom: 6em * $grid;}
 }
 
+.spacing--horiz-half{padding-left:.5em * $grid; padding-right: .5em * $grid;}
 .spacing--horiz-1{padding-left:1em * $grid; padding-right: 1em * $grid;}
 .spacing--horiz-2{padding-left:2em * $grid; padding-right: 2em * $grid;}
 .spacing--horiz-3{padding-left:3em * $grid; padding-right: 3em * $grid;}
@@ -33,8 +34,8 @@
 }
 
 .spacing--gutter {
-	padding-right: 1.7em * $grid;
-	padding-left: 1.7em * $grid;
+	padding-right: .7em * $grid;
+	padding-left: .7em * $grid;
 
     @include media($screen-sm) {
 	padding-right: 3em * $grid;
@@ -52,23 +53,15 @@
 .spacing--bot-4{padding-bottom: 4em * $grid;}
 
 .spacing--gutter-dsk {
-
-	@include media($screen-sm){
-	padding-right: .7em * $grid;
-	padding-left: .7em * $grid;
-}
-
     @include media($screen-sm) {
-	padding-right: 3em * $grid;
-	padding-left: 3em * $grid;
-    }
+		padding-right: 3em * $grid;
+		padding-left: 3em * $grid;
+   }
 }
 
 .spacing--gutter-mob {
 	@include media($max-sm){
 	padding-right: .7em * $grid;
 	padding-left: .7em * $grid;
-}
-
- 
+	}
 }
