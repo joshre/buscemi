@@ -4,6 +4,38 @@ jQuery(document).ready(function($) {
         threshold: 500,
         elements_selector: ".lazy"
     });
+    function openShut(trigger, content) {
+        trigger.on('click touchstart', function(event) {
+            event.preventDefault();
+            triggerContent = $(this);
+            targetContent = triggerContent.next();
+            if (triggerContent.hasClass('open')) {
+                trigger.removeClass('open').attr('aria-expanded', 'false');
+                content.removeClass('is-expanded').attr('aria-hidden', 'true');
+            } else {
+                trigger.removeClass('open').attr('aria-expanded', 'false');
+                content.removeClass('is-expanded').attr('aria-hidden', 'true');
+                triggerContent.toggleClass('open').attr('aria-expanded', 'true');
+                targetContent.toggleClass('is-expanded').attr('aria-hidden', 'false');
+            }
+        });
+    }
+    // 
+    // below is the function accepting an faq question & answer
+    // 
+    // openShut($('.faq--title'), $('.faq--answer'));
+    // you'll need to add the following css to the content: 
+    //  max-height: 1px;
+    //  overflow: hidden;
+    //  transition: max-height 0.3s $base-animation;
+
+    //  &.is-expanded {
+    //     @include accelerate;
+
+    //     transition: max-height 0.5s $base-animation;
+    //     max-height: 1000px;
+    //   }
+
     // if ($('.slides').length > 0) {
     //     $('.section--testimonial-wrap').flickity({
     //         // options
