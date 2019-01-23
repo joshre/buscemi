@@ -1,0 +1,63 @@
+// Variables
+$font-size: 112.5;
+
+// Gets used as %
+$line-height: 1.45;
+
+
+// Vertical rhythm mixins
+@mixin line-height($number) {
+  line-height: #{ $number * $line-height + 'rem'};
+}
+
+@mixin margin-top($number) {
+  margin-top: #{ $number * $line-height + 'rem'};
+}
+
+@mixin margin-bottom($number) {
+  margin-bottom: #{ $number * $line-height + 'rem'};
+}
+
+html {
+  font-size: #{$font-size + '%'}; // 112.5% = 18 pixels
+}
+// Headings parameters [ h1: line-height: 2 × 26px, margin-top: 3 × 26px, margin-bottom: 1 × 26px ]
+$headings: (
+  h1: (2, 3, 1),
+  h2: (1.5, 2, 1),
+  h3: (1.5, 1, 0),
+  h4: (1, 1, 0),
+  h5: (1, 1, 0),
+  h6: (1, 1, 0)
+);
+
+$mobileheadings: (
+  h1: (2, 2, 1),
+  h2: (1.5, 2, 1),
+  h3: (1.5, 1, 0),
+  h4: (1, 1, 0),
+  h5: (1, 1, 0),
+  h6: (1, 1, 0)
+);
+
+
+@each $heading, $properties in $mobileheadings {
+
+    #{$heading} {
+      @include line-height(nth($properties, 1));
+      @include margin-top(nth($properties, 2));
+      @include margin-bottom(nth($properties, 3));
+    }
+
+}
+
+// Set line-heights and margins
+@each $heading, $properties in $headings {
+@include media($screen-sm){
+    #{$heading} {
+      @include line-height(nth($properties, 1));
+      @include margin-top(nth($properties, 2));
+      @include margin-bottom(nth($properties, 3));
+    }
+  }
+}
