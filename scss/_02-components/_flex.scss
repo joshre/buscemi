@@ -7,7 +7,9 @@
         display: flex;
     }
 }
-
+.flex--column{
+    flex-direction: column;
+}
 .flex--wrap {
     flex-wrap: wrap;
 }
@@ -43,7 +45,9 @@
 .align--items-baseline {
     align-items: baseline;
 }
-
+.flex--column{
+    flex-direction: column;
+}
 // 
 // Grid
 //

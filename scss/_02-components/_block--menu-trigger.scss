@@ -1,6 +1,11 @@
+$menu--trigger-height: 26px;
+$menu--trigger-width: 30px;
+$menu--triger-border: 2px;
+$menu--triger-border-color: $base-font-color;
+
 .menu--trigger {
-    width: 30px;
-    height: 30px;
+    width: $menu--trigger-width;
+    height: $menu--trigger-height;
     position: relative;
     z-index: 99999999;
     display: block;
@@ -12,13 +17,13 @@
         will-change: opacity, color;
         height: 1px;
         width: 100%;
-        border-bottom: 2px solid;
+        border-bottom: $menu--triger-border solid;
         top: 50%;
         position: relative;
         transform: translateY(-50%);
         display: block;
         opacity: 1;
-        color: $base-font-color;
+        color: $menu--triger-border-color;
         transition: opacity 0.3s $base-animation, color 0.3s $base-animation;
     }
 
@@ -33,17 +38,17 @@
         content: ' ';
         transform-origin: center;
         transform: translateY(0) rotate(0);
-        color: $base-font-color;
+        color: $menu--triger-border-color;
         transition: transform 0.3s $base-animation, color 0.3s $base-animation;
     }
 
     &:before {
-        border-top: 2px solid;
+        border-top: $menu--triger-border solid;
         top: 0;
     }
 
     &:after {
-        border-bottom: 2px solid;
+        border-bottom: $menu--triger-border solid;
         bottom: 0;
     }
 }
@@ -58,17 +63,17 @@ body {
 
                 will-change: transform,color;
 
-                // color: $base-font-color;
+                // color: $menu--triger-border-color;
                 transition: transform 0.3s $base-animation, color 0.3s $base-animation;
             }
 
             &:before {
-                transform: translateY(14px) rotate(45deg);
+                transform: translateY(calc(#{$menu--trigger-height} / 2 - (#{$menu--triger-border} / 2))) rotate(45deg);
             }
 
             &:after {
                 transform: rotate(45deg);
-                transform: translateY(-14px) rotate(-45deg);
+                transform: translateY(calc(#{$menu--trigger-height} / -2 + (#{$menu--triger-border} / 2))) rotate(-45deg);
             }
 
             span {

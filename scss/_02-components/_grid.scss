@@ -1,7 +1,7 @@
 $gutter: $grid;
 
 // this variable is in variables
-div[class*="grid--"] {
+[class*="grid--"] {
     box-sizing: border-box;
 }
 

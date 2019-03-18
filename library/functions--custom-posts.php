@@ -1,5 +1,5 @@
 <?php
-function getCustomPosts($posttype = '', $limit = '', $category = '', $order = 'title', $excluded = null, $tag = null)
+function getCustomPosts($posttype = '', $limit = '', $category = '', $order = 'title', $excluded = null, $tag = null, $search = null)
 {
 
     if (is_numeric($category)) {
@@ -13,23 +13,26 @@ function getCustomPosts($posttype = '', $limit = '', $category = '', $order = 't
         'orderby'        => $order,
 
     );
+    if (is_array($category)) {
+        $multicat = array();
+        foreach ($category as $cat) {
+            $multicat[] = $cat;
 
+        }
+        $args['category__and'] = $multicat;
+    }
     // Begin statememnts to append the $args array, just so the arrays stay light and clean.
 
-    // If we're looking at work posts, and there is a category to filter by, we need to use custom taxonomies
-    if ($posttype == 'our-work' && $category != null) {
-        $args['tax_query'] = array(
-            array(
-                'taxonomy' => 'work-categories',
-                'field'    => 'slug',
-                'terms'    => array($category),
-            ),
-        );
-    }
     // If there's a category to filter by, we're gonna go ahead and do that
     elseif ($category != null) {
+
         $args['category_name'] = $category;
     }
+    if ($search != null) {
+        $args['s'] = $search;
+
+    }
+
     if ($tag != null) {
         $args['tag'] = $tag;
     }

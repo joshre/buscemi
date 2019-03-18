@@ -1,3 +1,6 @@
+img{
+  max-width: 100%;
+}
 // Variables
 $font-size: 112.5;
 
@@ -25,16 +28,16 @@ html {
 $headings: (
   h1: (2, 3, 1),
   h2: (1.5, 2, 1),
-  h3: (1.5, 1, 0),
+  h3: (1.25, 1, .5),
   h4: (1, 1, 0),
   h5: (1, 1, 0),
   h6: (1, 1, 0)
 );
 
 $mobileheadings: (
-  h1: (2, 2, 1),
+  h1: (2, 3, 1),
   h2: (1.5, 2, 1),
-  h3: (1.5, 1, 0),
+  h3: (1.25, 1, .5),
   h4: (1, 1, 0),
   h5: (1, 1, 0),
   h6: (1, 1, 0)
@@ -43,7 +46,7 @@ $mobileheadings: (
 
 @each $heading, $properties in $mobileheadings {
 
-    #{$heading} {
+    #{$heading}, .#{$heading} {
       @include line-height(nth($properties, 1));
       @include margin-top(nth($properties, 2));
       @include margin-bottom(nth($properties, 3));
@@ -54,10 +57,19 @@ $mobileheadings: (
 // Set line-heights and margins
 @each $heading, $properties in $headings {
 @include media($screen-sm){
-    #{$heading} {
+    #{$heading}, .#{$heading} {
       @include line-height(nth($properties, 1));
       @include margin-top(nth($properties, 2));
       @include margin-bottom(nth($properties, 3));
     }
   }
 }
+
+
+// * {
+//   @include line-height(1);
+//   @include margin-bottom(1);
+//   @include margin-top(0);
+// }
+
+$h1margin:4.35rem;

@@ -1,0 +1,15 @@
+
+<aside>
+
+		<form action="{{site.url}}/wp-admin/admin-ajax.php" method="POST" id="THIS ID REFERENCED IN SITE.JS AJAX" accept-charset="utf-8">
+			<input type="text" name="search">
+			<fieldset name="category">
+				{% for category in categories %}
+					<label><input value="{{category.term_id}}" name="categories[]" type="checkbox"><span class="piece--name">{{category.name}}</span></label>
+				{% endfor %}
+			</fieldset>
+		</select>
+		<input type="hidden" name="action" value="recipe">
+	</form>
+
+</aside>

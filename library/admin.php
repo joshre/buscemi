@@ -103,7 +103,7 @@ add_action('admin_head', 'custom_css');
 
 // Custom Backend Footer
 function bones_custom_admin_footer() {
-    _e('<span id="footer-thankyou">Developed by <a href="http://honeyagency.com" target="_blank">The Honey Agency</a></span>.', 'bonestheme');
+    _e('<span id="footer-thankyou">Developed by <a href="http://honeyagency.com" target="_blank">Honey</a></span>.', 'bonestheme');
 }
 
 // adding it to the admin area
@@ -146,4 +146,26 @@ function remove_menus() {
     
 }
 add_action('admin_menu', 'remove_menus');
-?>
+
+function custom_menu_order( $menu_ord ) {  
+    
+    if (!$menu_ord) return true;  
+    
+    
+    // vars
+    $menu = 'acf-options';
+    
+    
+    // remove from current menu
+    $menu_ord = array_diff($menu_ord, array( $menu ));
+    
+    
+    // append after index.php [0]
+    array_splice( $menu_ord, 1, 0, array( $menu ) );
+    
+    
+    // return
+    return $menu_ord;
+}  
+add_filter('custom_menu_order', 'custom_menu_order'); // Activate custom_menu_order  
+add_filter('menu_order', 'custom_menu_order');

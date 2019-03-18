@@ -154,3 +154,34 @@ jQuery(document).ready(function($) {
         });
     }
 });
+
+
+// AJAX Search
+
+// jQuery(function($){
+//     $('#IDOFTHEFORM').on('submit', function(event) {
+//         event.preventDefault();
+//         /* Act on the event */
+//     });
+//     $('#IDOFTHEFORM input').change(function(event){
+//         var filter = $('#IDOFTHEFORM');
+//         var wrap = $('CLASSNAME THAT RECEIVES THE LOADING CLASS');
+//         $.ajax({
+//             url:filter.attr('action'),
+//             data:filter.serialize(), // form data
+//             type:filter.attr('method'), // POST
+//             beforeSend:function(xhr){
+//                 // filter.find('button').text('Processing...'); // changing the button label
+//                 wrap.toggleClass('loading');
+//             },
+//             success:function(data){
+//                 // filter.find('button').text('Apply filter'); // changing the button label back
+//                 $('#response').html(data); // insert data
+//                 wrap.toggleClass('loading');
+//             }
+//         });
+//         return false;
+//     });
+
+// });
+
