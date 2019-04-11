@@ -47,7 +47,6 @@ $mobileheadings: (
 @each $heading, $properties in $mobileheadings {
 
     #{$heading}, .#{$heading} {
-      @include line-height(nth($properties, 1));
       @include margin-top(nth($properties, 2));
       @include margin-bottom(nth($properties, 3));
     }
@@ -58,7 +57,6 @@ $mobileheadings: (
 @each $heading, $properties in $headings {
 @include media($screen-sm){
     #{$heading}, .#{$heading} {
-      @include line-height(nth($properties, 1));
       @include margin-top(nth($properties, 2));
       @include margin-bottom(nth($properties, 3));
     }
