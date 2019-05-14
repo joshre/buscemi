@@ -185,3 +185,117 @@ jQuery(document).ready(function($) {
 
 // });
 
+$(document).ready(function() {
+    // Setup the a11y nav
+    $(".main-menu").setup_navigation();
+
+    // RWD Nav Pattern
+    $("body").addClass("js");
+    var $menu = $(".main-menu"),
+        $menulink = $(".nav-link"),
+        $menuTrigger = $(".menu-item-has-children > a");
+
+    $menulink.click(function(e) {
+        // e.preventDefault();
+        $menulink.toggleClass("active");
+        $menu.toggleClass("active");
+    });
+
+    $menuTrigger.click(function(e) {
+        // e.preventDefault();
+        var $this = $(this);
+        $this
+            .toggleClass("active")
+            .next("ul")
+            .toggleClass("active");
+    });
+});
+
+$.fn.setup_navigation = function(settings) {
+
+    settings = jQuery.extend(
+        {
+            menuHoverClass: "show-menu"
+        },
+        settings
+    );
+
+    var top_level_links = $(this).find("> li > a");
+
+    // Set tabIndex to -1 so that top_level_links can't receive focus until menu is open
+    $(top_level_links)
+        .next("ul")
+        .attr("data-test", "true")
+        .attr({ "aria-hidden": "true" })
+        .find("a")
+        .attr("tabIndex", -1);
+
+    // Adding aria-haspopup for appropriate items
+    $(top_level_links).each(function() {
+        if ($(this).next("ul").length > 0)
+            $(this)
+                .parent("li")
+                .attr("aria-haspopup", "true");
+    });
+
+    $(top_level_links).hover(function() {
+        $(this)
+            .closest("ul")
+            .attr("aria-hidden", "false")
+            .find("." + settings.menuHoverClass)
+            .attr("aria-hidden", "true")
+            .removeClass(settings.menuHoverClass)
+            .find("a")
+            .attr("tabIndex", -1);
+        $(this)
+            .next("ul")
+            .attr("aria-hidden", "false")
+            .addClass(settings.menuHoverClass)
+            .find("a")
+            .attr("tabIndex", 0);
+    });
+
+    $(top_level_links).focus(function() {
+        $(this)
+            .closest("ul")
+            .find("." + settings.menuHoverClass)
+            .attr("aria-hidden", "true")
+            .removeClass(settings.menuHoverClass)
+            .find("a")
+            .attr("tabIndex", -1);
+
+        $(this)
+            .next("ul")
+            .attr("aria-hidden", "false")
+            .addClass(settings.menuHoverClass)
+            .find("a")
+            .attr("tabIndex", 0);
+    });
+
+    // Hide menu if click or focus occurs outside of navigation
+    $(this)
+        .find("a")
+        .last()
+        .keydown(function(e) {
+            if (e.keyCode == 9) {
+                // If the user tabs out of the navigation hide all menus
+                $("." + settings.menuHoverClass)
+                    .attr("aria-hidden", "true")
+                    .removeClass(settings.menuHoverClass)
+                    .find("a")
+                    .attr("tabIndex", -1);
+            }
+        });
+
+    $(document).click(function() {
+        $("." + settings.menuHoverClass)
+            .attr("aria-hidden", "true")
+            .removeClass(settings.menuHoverClass)
+            .find("a")
+            .attr("tabIndex", -1);
+    });
+
+    $(this).click(function(e) {
+        e.stopPropagation();
+    });
+};

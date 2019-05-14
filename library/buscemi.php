@@ -105,3 +105,6 @@ if (function_exists('acf_add_options_page')) {
 
 require_once 'functions--custom-fields.php';
 require_once 'functions--custom-posts.php';
+
+add_filter( 'auto_update_plugin', '__return_true' );
+add_filter( 'auto_update_theme', '__return_true' );
