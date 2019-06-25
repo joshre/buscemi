@@ -906,3 +906,11 @@ $gutter: $grid;
         }
     }
 }
+[class*="grid--"] {
+    box-sizing: border-box;
+
+    @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+        flex-basis: auto !important;
+        flex: 0 0 auto !important;
+    }
+}

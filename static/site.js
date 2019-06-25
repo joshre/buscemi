@@ -4,11 +4,12 @@ jQuery(document).ready(function($) {
         threshold: 500,
         elements_selector: ".lazy"
     });
+
     function openShut(trigger, content) {
         trigger.on('click touchstart', function(event) {
             event.preventDefault();
             triggerContent = $(this);
-            targetContent = triggerContent.next();
+            targetContent = content;
             if (triggerContent.hasClass('open')) {
                 trigger.removeClass('open').attr('aria-expanded', 'false');
                 content.removeClass('is-expanded').attr('aria-hidden', 'true');
@@ -28,14 +29,11 @@ jQuery(document).ready(function($) {
     //  max-height: 1px;
     //  overflow: hidden;
     //  transition: max-height 0.3s $base-animation;
-
     //  &.is-expanded {
     //     @include accelerate;
-
     //     transition: max-height 0.5s $base-animation;
     //     max-height: 1000px;
     //   }
-
     // if ($('.slides').length > 0) {
     //     $('.section--testimonial-wrap').flickity({
     //         // options
@@ -83,17 +81,13 @@ jQuery(document).ready(function($) {
     //         }
     //     });
     // });
-
-// Parallax Script
-
+    // Parallax Script
     // if ($('.parallax').length > 0) {
     //     window.addEventListener("load", function() {
     //         SmoothParallax.init('pageScroll');
     //     });
     // }
-
-// appear and disappear   
-    
+    // appear and disappear   
     // appear({
     //     init: function init() {},
     //     // function to get all elements to track
@@ -110,9 +104,7 @@ jQuery(document).ready(function($) {
     //     },
     //     reappear: true,
     // });
-
-// appear once
-    
+    // appear once
     // appear({
     //     init: function init() {},
     //     // function to get all elements to track
@@ -129,8 +121,19 @@ jQuery(document).ready(function($) {
     //     // },
     //     reappear: false,
     // });
-
-    
+    // if gravity forms has a form and the inputs have labels, use them as placeholders
+    if ($('.gform_wrapper').length > 0) {
+        var inputs = $('.gform_wrapper form input');
+        inputs.each(function(index, el) {
+            // name = $(el).parent('li').children('label');
+            if ($(el).attr('type') != 'hidden') {
+                var labelName = $(el).parent('div').parent('li').children('label').text();
+                if (labelName.length > 0) {
+                    $(el).attr('placeholder', labelName);
+                }
+            }
+        });
+    }
     if (window.matchMedia('(max-width: 767px)').matches) {
         var mob = true;
     } else {
@@ -154,10 +157,7 @@ jQuery(document).ready(function($) {
         });
     }
 });
-
-
 // AJAX Search
-
 // jQuery(function($){
 //     $('#IDOFTHEFORM').on('submit', function(event) {
 //         event.preventDefault();
@@ -182,119 +182,81 @@ jQuery(document).ready(function($) {
 //         });
 //         return false;
 //     });
-
 // });
-
 $(document).ready(function() {
     // Setup the a11y nav
     $(".main-menu").setup_navigation();
-
     // RWD Nav Pattern
     $("body").addClass("js");
     var $menu = $(".main-menu"),
         $menulink = $(".nav-link"),
         $menuTrigger = $(".menu-item-has-children > a");
-
     $menulink.click(function(e) {
         // e.preventDefault();
         $menulink.toggleClass("active");
         $menu.toggleClass("active");
     });
-
     $menuTrigger.click(function(e) {
         // e.preventDefault();
         var $this = $(this);
-        $this
-            .toggleClass("active")
-            .next("ul")
-            .toggleClass("active");
+        $this.toggleClass("active").next("ul").toggleClass("active");
     });
 });
-
+$(document).ready(function() {
+    // Setup the a11y nav
+    $(".main-menu").setup_navigation();
+    // RWD Nav Pattern
+    $("body").addClass("js");
+    var $menu = $(".main-menu"),
+        $menulink = $(".nav-link"),
+        $menuTrigger = $(".menu-item-has-children > a");
+    $menulink.click(function(e) {
+        // e.preventDefault();
+        $menulink.toggleClass("active");
+        $menu.toggleClass("active");
+    });
+    $menuTrigger.click(function(e) {
+        // e.preventDefault();
+        var $this = $(this);
+        $this.toggleClass("active").next("ul").toggleClass("active");
+    });
+});
 $.fn.setup_navigation = function(settings) {
-
-    settings = jQuery.extend(
-        {
-            menuHoverClass: "show-menu"
-        },
-        settings
-    );
-
+    settings = jQuery.extend({
+        menuHoverClass: "show-menu",
+        topLevelActive: "sub-open"
+    }, settings);
     var top_level_links = $(this).find("> li > a");
-
     // Set tabIndex to -1 so that top_level_links can't receive focus until menu is open
-    $(top_level_links)
-        .next("ul")
-        .attr("data-test", "true")
-        .attr({ "aria-hidden": "true" })
-        .find("a")
-        .attr("tabIndex", -1);
-
+    $(top_level_links).next("ul").attr("data-test", "true").attr({
+        "aria-hidden": "true"
+    }).find("a").attr("tabIndex", -1);
     // Adding aria-haspopup for appropriate items
     $(top_level_links).each(function() {
-        if ($(this).next("ul").length > 0)
-            $(this)
-                .parent("li")
-                .attr("aria-haspopup", "true");
+        if ($(this).next("ul").length > 0) $(this).parent("li").attr("aria-haspopup", "true");
     });
-
     $(top_level_links).hover(function() {
-        $(this)
-            .closest("ul")
-            .attr("aria-hidden", "false")
-            .find("." + settings.menuHoverClass)
-            .attr("aria-hidden", "true")
-            .removeClass(settings.menuHoverClass)
-            .find("a")
-            .attr("tabIndex", -1);
-        $(this)
-            .next("ul")
-            .attr("aria-hidden", "false")
-            .addClass(settings.menuHoverClass)
-            .find("a")
-            .attr("tabIndex", 0);
+        $(this).closest("ul").attr("aria-hidden", "false").find("." + settings.menuHoverClass).attr("aria-hidden", "true").removeClass(settings.menuHoverClass).find("a").attr("tabIndex", -1);
+        $(this).next("ul").attr("aria-hidden", "false").addClass(settings.menuHoverClass).find("a").attr("tabIndex", 0);
     });
-
     $(top_level_links).focus(function() {
-        $(this)
-            .closest("ul")
-            .find("." + settings.menuHoverClass)
-            .attr("aria-hidden", "true")
-            .removeClass(settings.menuHoverClass)
-            .find("a")
-            .attr("tabIndex", -1);
-
-        $(this)
-            .next("ul")
-            .attr("aria-hidden", "false")
-            .addClass(settings.menuHoverClass)
-            .find("a")
-            .attr("tabIndex", 0);
+        $('.toplevel' + '.' + settings.topLevelActive).removeClass(settings.topLevelActive);
+        $(this).closest("ul").find("." + settings.menuHoverClass).attr("aria-hidden", "true").removeClass(settings.menuHoverClass).find("a").attr("tabIndex", -1);
+        $(this).next("ul").attr("aria-hidden", "false").addClass(settings.menuHoverClass).find("a").attr("tabIndex", 0);
+        $(this).addClass(settings.topLevelActive);
     });
-
     // Hide menu if click or focus occurs outside of navigation
-    $(this)
-        .find("a")
-        .last()
-        .keydown(function(e) {
-            if (e.keyCode == 9) {
-                // If the user tabs out of the navigation hide all menus
-                $("." + settings.menuHoverClass)
-                    .attr("aria-hidden", "true")
-                    .removeClass(settings.menuHoverClass)
-                    .find("a")
-                    .attr("tabIndex", -1);
-            }
-        });
-
-    $(document).click(function() {
-        $("." + settings.menuHoverClass)
-            .attr("aria-hidden", "true")
-            .removeClass(settings.menuHoverClass)
-            .find("a")
-            .attr("tabIndex", -1);
+    $(this).find("a").last().keydown(function(e) {
+        if (e.keyCode == 9) {
+            // If the user tabs out of the navigation hide all menus
+            $("." + settings.menuHoverClass).attr("aria-hidden", "true").removeClass(settings.menuHoverClass).find("a").attr("tabIndex", -1);
+            $('.toplevel' + '.' + settings.topLevelActive).removeClass(settings.topLevelActive);
+        }
     });
-
+    $(document).click(function() {
+        $("." + settings.menuHoverClass).attr("aria-hidden", "true").removeClass(settings.menuHoverClass).find("a").attr("tabIndex", -1);
+        $('.toplevel' + '.' + settings.topLevelActive).removeClass(settings.topLevelActive);
+    });
     $(this).click(function(e) {
         e.stopPropagation();
     });

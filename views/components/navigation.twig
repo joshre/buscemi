@@ -2,7 +2,7 @@
 	<ul aria-hidden="false" class="main-menu">
 		{% for item in menu.get_items %}
 			<li class="nav-item {{item.classes | join(' ')}}" {% if item.get_children %}data-test="true" aria-haspopup="true"{% endif %}>
-			<a class="nav-link" href="{{item.get_link}}">{{item.title}}</a>
+			<a class="nav-link toplevel {% if item.get_link != null %}{% else %}notalink{% endif %}" aria-label="{{item.title}}" {% if item.get_link != null %}href="{{item.get_link}}"{% else %}href="javascript:void(0)"{% endif %}>{{item.title}}</a>
 			{% if item.get_children %}
 				<ul class="nav nav-drop" aria-hidden="true">
 					{% for child in item.get_children %}
