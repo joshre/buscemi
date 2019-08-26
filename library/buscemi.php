@@ -112,6 +112,11 @@ function spinner_url( $image_src, $form ) {
 }
 require_once 'functions--custom-fields.php';
 require_once 'functions--custom-posts.php';
+// require_once 'functions--ajax.php';
+
+
+// Make sure to put the correct fields in the list_searchable_acf() array!
+// require_once 'functions--search.php';
 
 add_filter( 'auto_update_plugin', '__return_true' );
 add_filter( 'auto_update_theme', '__return_true' );
