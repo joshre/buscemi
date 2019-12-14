@@ -139,7 +139,7 @@ add_filter( 'auto_update_theme', '__return_true' );
 
 function my_acf_init() {
     
-    acf_update_setting('google_api_key', 'AIzaSyC5B1zxmLjmGdL5LYoBr3EryjbqSdn7lg4');
+    acf_update_setting('google_api_key', 'API KEY');
 }
 
 add_action('acf/init', 'my_acf_init');
