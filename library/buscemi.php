@@ -120,3 +120,26 @@ require_once 'functions--custom-posts.php';
 
 add_filter( 'auto_update_plugin', '__return_true' );
 add_filter( 'auto_update_theme', '__return_true' );
+
+
+// function to add a Google Maps API Key
+
+
+//  Make sure the Google Maps Api’s are enabled: //
+//////////////////////////////////////////////////
+///// Google Maps Directions API
+///// Google Maps Distance Matrix API
+///// Google Maps Elevation API
+///// Google Maps Geocoding API
+///// Google Maps JavaScript API
+///// Google Places API Web Service
+///// Google Static Maps API
+//////////////////////////////////////////////////
+
+
+function my_acf_init() {
+    
+    acf_update_setting('google_api_key', 'AIzaSyC5B1zxmLjmGdL5LYoBr3EryjbqSdn7lg4');
+}
+
+add_action('acf/init', 'my_acf_init');

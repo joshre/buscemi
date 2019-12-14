@@ -50,7 +50,7 @@ class StarterSite extends TimberSite
         /* this is where you can add your own fuctions to twig */
         $twig->addExtension(new Twig_Extension_StringLoader());
         $twig->addFilter('widowless', new Twig_Filter_Function('word_wrapper'));
-
+        $twig->addFilter('to_id', new Twig_Filter_Function('createId'));
         return $twig;
     }
 }
@@ -67,6 +67,19 @@ function word_wrapper($text)
     }
     return $return;
 }
+function createId($string)
+{
+    //Lower case everything
+    $string = strtolower($string);
+    //Make alphanumeric (removes all other characters)
+    $string = preg_replace("/[^a-z0-9_\s-]/", "", $string);
+    //Clean up multiple dashes or whitespaces
+    $string = preg_replace("/[\s-]+/", " ", $string);
+    //Convert whitespaces and underscore to dash
+    $string = preg_replace("/[\s_]/", "-", $string);
+    return $string;
+}
+
 new StarterSite();
 
 require_once 'library/admin.php';

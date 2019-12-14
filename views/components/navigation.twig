@@ -1,4 +1,4 @@
-<nav role="navigation" class="main-navigation nav" id="a11y-menu" aria-label="Main menu">
+<nav role="navigation" class="main-navigation nav" id="a11y-menu" aria-label="Main">
 	<ul aria-hidden="false" class="main-menu">
 		{% for item in menu.get_items %}
 			<li class="nav-item {{item.classes | join(' ')}}" {% if item.get_children %}data-test="true" aria-haspopup="true"{% endif %}>
