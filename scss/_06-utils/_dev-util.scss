@@ -1,42 +1,46 @@
 $media-query-display: false;
-$mono-font: monospace;
-.block--media-queries {
-    display: none;
-    z-index: 9999999;
+$devmono: "SF Mono", monospace;
 
-    @if $media-query-display == true {
-        display: block;
-    }
+.block--media-queries {
+    z-index: 9999999;
+    transform: skewX(-2deg) translateY(4rem);
+    transition: transform 0.2s $base-animation;
+
+    // @if $media-query-display == true {
+    //   ;
+    // }
 
     &.show {
-        display: block;
+        transition: transform 0.2s $base-animation;
+        transform: skewX(0) translateY(0);
     }
 
-    font-size: .9rem;
+    border-radius: 3px;
+    font-size: .7rem;
     position: fixed;
-    bottom: 1em;
-    left: 1em;
-    background-color: black;
-    color: white;
-    padding: .5em;
-    font-family: $mono-font;
+    bottom: 1rem;
+    left: 1rem;
+    background-color: #231F20;
+    color: #efede7;
+    padding: .4rem .7rem;
+    font-family: $devmono;
 
     &:after {
-        content: 'displaying smallest';
-        font-weight: 900;
+        content: '< 480px';
+        font-weight: 500;
     }
 
     @include media($screen-xs) {
         &:after {
-            content: 'displaying screen-xs';
-            font-weight: 900;
+            content: 'screen-xs 480px';
+            font-weight: 500;
         }
     }
 
 
     @include media($screen-xsm) {
         &:after {
-            content: 'displaying screen-xsm';
+            content: 'screen-xsm';
             font-weight: 100;
         }
     }
@@ -44,15 +48,15 @@ $mono-font: monospace;
 
     @include media($screen-sm) {
         &:after {
-            content: 'displaying screen-sm';
-            font-weight: 900;
+            content: 'screen-sm 640px';
+            font-weight: 500;
         }
     }
 
 
     @include media($screen-smd) {
         &:after {
-            content: 'displaying screen-smd';
+            content: 'screen-smd 834px';
             font-weight: 100;
         }
     }
@@ -60,15 +64,15 @@ $mono-font: monospace;
 
     @include media($screen-md) {
         &:after {
-            content: 'displaying screen-md';
-            font-weight: 900;
+            content: 'screen-md 992px';
+            font-weight: 500;
         }
     }
 
 
     @include media($screen-mdl) {
         &:after {
-            content: 'displaying screen-mdl';
+            content: 'screen-mdl 1110px';
             font-weight: 100;
         }
     }
@@ -76,15 +80,15 @@ $mono-font: monospace;
 
     @include media($screen-lg) {
         &:after {
-            content: 'displaying screen-lg';
-            font-weight: 900;
+            content: 'screen-lg 1200px';
+            font-weight: 500;
         }
     }
 
 
     @include media($screen-xl) {
         &:after {
-            content: 'displaying screen-xl';
+            content: 'screen-xl 1640px';
             font-weight: 100;
         }
     }
