@@ -8,7 +8,7 @@ function bc_dashboard_widget_function()
 }
 function bc_add_dashboard_widgets()
 {
-    wp_add_dashboard_widget('wp_dashboard_widget', 'Buscemi Docs', 'bc_dashboard_widget_function');
+    wp_add_dashboard_widget('wp_dashboard_widget', get_bloginfo( 'name' ) . ' Documentation', 'bc_dashboard_widget_function');
 }
 add_action('wp_dashboard_setup', 'bc_add_dashboard_widgets');
 
@@ -41,7 +41,7 @@ function jquery_enqueue()
 {
     wp_dequeue_script('jquery');
     wp_deregister_script('jquery');
-    wp_register_script('jquery',  get_template_directory_uri() . '/app/jquery-1.9.1.min.js', false, null);
+    wp_register_script('jquery',  get_template_directory_uri() . '/app/jquery-3.4.1.min.js', false, null);
 }
 
 function localInstall()
