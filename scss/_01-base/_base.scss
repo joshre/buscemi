@@ -1,73 +1,54 @@
-img{
-  max-width: 100%;
+img {
+    max-width: 100%;
 }
+
 // Variables
-$font-size: 112.5;
 
 // Gets used as %
-$line-height: 1.45;
-
+$line-height: 1.6;
 
 // Vertical rhythm mixins
-@mixin line-height($number) {
-  line-height: #{ $number * $line-height + 'rem'};
-}
 
 @mixin margin-top($number) {
-  margin-top: #{ $number * $line-height + 'rem'};
+    margin-top: #{$number * $line-height + "rem"};
 }
 
 @mixin margin-bottom($number) {
-  margin-bottom: #{ $number * $line-height + 'rem'};
+    margin-bottom: #{$number * $line-height + "rem"};
 }
 
-html {
-  font-size: #{$font-size + '%'}; // 112.5% = 18 pixels
-}
-// Headings parameters [ h1: line-height: 2 × 26px, margin-top: 3 × 26px, margin-bottom: 1 × 26px ]
-$headings: (
-  h1: (2, 3, 1),
-  h2: (1.5, 2, 1),
-  h3: (1.25, 1, .5),
-  h4: (1, 1, 0),
-  h5: (1, 1, 0),
-  h6: (1, 1, 0)
-);
-
-$mobileheadings: (
-  h1: (2, 3, 1),
-  h2: (1.5, 2, 1),
-  h3: (1.25, 1, .5),
-  h4: (1, 1, 0),
-  h5: (1, 1, 0),
-  h6: (1, 1, 0)
-);
-
-
-@each $heading, $properties in $mobileheadings {
-
-    #{$heading}, .#{$heading} {
-      @include margin-top(nth($properties, 2));
-      @include margin-bottom(nth($properties, 3));
+@mixin font-size($number, $large) {
+    @if $large == true {
+        font-size: #{$number * $base-font-size * 1.25};
     }
 
+    @if $large != true {
+        font-size: #{$number * $base-font-size};
+    }
 }
+
+
+// Headings parameters [ h1: line-height: 2 × 26px, margin-top: 3 × 26px, margin-bottom: 1 × 26px ]
+
+// line height, margin top, margin bottom, font-size
+$headings: (
+  h1: (2, 3, 1, 2.6),
+  h2: (1.5, 2, 1, 1.075),
+  h3: (1.4, 1, .5, 1.1),
+  h4: (1, 1, 0, 0.9),
+  h5: (1, 1, 0, 0.875),
+  h6: (1, 1, 0, 0.7)
+);
+
 
 // Set line-heights and margins
 @each $heading, $properties in $headings {
-@include media($screen-sm){
     #{$heading}, .#{$heading} {
-      @include margin-top(nth($properties, 2));
-      @include margin-bottom(nth($properties, 3));
+        @include margin-top(nth($properties, 2));
+        @include margin-bottom(nth($properties, 3));
+        @include font-size(nth($properties, 4), false);
+        @include media(min-width $screen-sm) {
+        @include font-size(nth($properties, 4), true);
+        }
     }
-  }
 }
-
-
-// * {
-//   @include line-height(1);
-//   @include margin-bottom(1);
-//   @include margin-top(0);
-// }
-
-$h1margin:4.35rem;

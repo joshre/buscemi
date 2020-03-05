@@ -2,13 +2,8 @@ body {
     -webkit-font-smoothing: antialiased;
     font-family: $base-sans-font;
     line-height: $base-line-height;
-    font-size: $mobile-font-calculation;
-
-    @include media($screen-smd) {
-        font-size: $font-calculation;
-    }
-
-
+    font-size: $base-font-size;
+    font-kerning: normal;
     color: $base-font-color;
     font-weight: 400;
 }
@@ -38,6 +33,7 @@ $h3: 0.95 * $base-font-size;
 $h4: 0.9 * $base-font-size;
 $h5: 0.875 * $base-font-size;
 $h6: 0.7 * $base-font-size;
+
 h1, .h1 {
     font-size: $h1;
 }
